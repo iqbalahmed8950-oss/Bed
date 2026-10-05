@@ -1,0 +1,1153 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AURA Sleep Sanctuary | Bespoke Luxury Beds & Artisanal Mattresses</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome Icons CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Cormorant Garamond & Montserrat -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Montserrat:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        obsidian: {
+                            950: '#07080b',
+                            900: '#0b0d12',
+                            800: '#13161f',
+                            700: '#1a1d28',
+                            600: '#252938'
+                        },
+                        gold: {
+                            light: '#f4e0a5',
+                            DEFAULT: '#d4af37',
+                            dark: '#aa820a',
+                            rose: '#e5b88f',
+                        },
+                        champagne: '#f7f5f0',
+                        velvet: '#181a20'
+                    },
+                    fontFamily: {
+                        serif: ['"Cormorant Garamond"', 'serif'],
+                        sans: ['Montserrat', 'sans-serif'],
+                    },
+                    backgroundImage: {
+                        'gold-gradient': 'linear-gradient(135deg, #f4e0a5 0%, #d4af37 50%, #aa820a 100%)',
+                        'dark-gradient': 'linear-gradient(180deg, rgba(7,8,11,0.85) 0%, rgba(19,22,31,0.95) 100%)',
+                        'radial-glow': 'radial-gradient(circle, rgba(212,175,55,0.15) 0%, rgba(7,8,11,0) 70%)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #0b0d12;
+            color: #e2e8f0;
+            font-family: 'Montserrat', sans-serif;
+            overflow-x: hidden;
+        }
+        .text-gold-gradient {
+            background: linear-gradient(135deg, #f7f5f0 0%, #d4af37 50%, #b8860b 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .gold-glow {
+            box-shadow: 0 0 25px rgba(212, 175, 55, 0.2);
+        }
+        .gold-glow-hover:hover {
+            box-shadow: 0 0 35px rgba(212, 175, 55, 0.35);
+        }
+        .glass-panel {
+            background: rgba(19, 22, 31, 0.7);
+            backdrop-filter: blur(14px);
+            border: 1px solid rgba(212, 175, 55, 0.15);
+        }
+        .glass-card {
+            background: linear-gradient(145deg, rgba(26, 29, 40, 0.6), rgba(13, 15, 22, 0.85));
+            border: 1px solid rgba(212, 175, 55, 0.12);
+        }
+        .glass-card:hover {
+            border-color: rgba(212, 175, 55, 0.4);
+        }
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0b0d12;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #252938;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #d4af37;
+        }
+        .tab-btn.active {
+            border-color: #d4af37;
+            background-color: rgba(212, 175, 55, 0.12);
+            color: #d4af37;
+        }
+        .option-card.selected {
+            border-color: #d4af37;
+            background: rgba(212, 175, 55, 0.08);
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.2);
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-gold selection:text-obsidian-950">
+
+    <header id="main-header" class="fixed top-0 left-0 w-full z-50 transition-all duration-300 py-5">
+        <div class="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between">
+            <!-- Brand Logo -->
+            <a href="#home" class="flex items-center gap-3 group">
+                <div class="w-10 h-10 rounded-full border border-gold flex items-center justify-center bg-obsidian-800 transition-transform duration-500 group-hover:rotate-180">
+                    <span class="font-serif text-xl font-bold text-gold">A</span>
+                </div>
+                <div class="flex flex-col">
+                    <span class="font-serif text-2xl font-bold tracking-widest text-gold-gradient">AURA</span>
+                    <span class="text-[9px] tracking-[0.35em] uppercase text-gray-400 -mt-1 font-light">Sleep Sanctuary</span>
+                </div>
+            </a>
+
+            <!-- Desktop Navigation Links -->
+            <nav class="hidden lg:flex items-center space-x-9 text-xs tracking-[0.2em] uppercase font-medium">
+                <a href="#home" class="nav-link text-white hover:text-gold transition-colors py-1">Home</a>
+                <a href="#about" class="nav-link text-gray-300 hover:text-gold transition-colors py-1">About</a>
+                <a href="#services" class="nav-link text-gray-300 hover:text-gold transition-colors py-1">Services & Sizes</a>
+                <a href="#customizing" class="nav-link text-gold font-semibold hover:brightness-125 transition-colors py-1 flex items-center gap-1.5">
+                    <i class="fa-solid fa-wand-magic-sparkles text-[11px]"></i> Customizing
+                </a>
+                <a href="#materials" class="nav-link text-gray-300 hover:text-gold transition-colors py-1">Material Swatches</a>
+                <a href="#contact" class="nav-link text-gray-300 hover:text-gold transition-colors py-1">Contact</a>
+            </nav>
+
+            <!-- Call To Action Button -->
+            <div class="hidden sm:flex items-center gap-4">
+                <a href="#customizing" class="px-6 py-2.5 text-xs uppercase tracking-widest font-semibold text-obsidian-950 bg-gold-gradient rounded-sm hover:brightness-110 transition-all gold-glow duration-300">
+                    Design Your Bed
+                </a>
+            </div>
+
+            <!-- Mobile Menu Toggle Button -->
+            <button id="mobile-menu-btn" class="lg:hidden text-white hover:text-gold text-2xl focus:outline-none">
+                <i class="fa-solid fa-bars-staggered"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden lg:hidden glass-panel border-t border-gold/10 mt-4 px-8 py-6 flex-col space-y-4">
+            <a href="#home" class="mobile-nav-link text-sm uppercase tracking-widest text-white hover:text-gold py-1">Home</a>
+            <a href="#about" class="mobile-nav-link text-sm uppercase tracking-widest text-gray-300 hover:text-gold py-1">About</a>
+            <a href="#services" class="mobile-nav-link text-sm uppercase tracking-widest text-gray-300 hover:text-gold py-1">Services & Sizes</a>
+            <a href="#customizing" class="mobile-nav-link text-sm uppercase tracking-widest text-gold hover:brightness-125 py-1">Customizing Studio</a>
+            <a href="#materials" class="mobile-nav-link text-sm uppercase tracking-widest text-gray-300 hover:text-gold py-1">Material Swatches</a>
+            <a href="#contact" class="mobile-nav-link text-sm uppercase tracking-widest text-gray-300 hover:text-gold py-1">Contact</a>
+            <a href="#customizing" class="w-full mt-3 px-6 py-3 text-xs uppercase tracking-widest font-semibold text-obsidian-950 bg-gold-gradient rounded-sm text-center block">
+                Start Customizer
+            </a>
+        </div>
+    </header>
+
+    <section id="home" class="relative min-h-screen flex items-center justify-center pt-24 pb-16 overflow-hidden">
+        <!-- Background Image & Layer Glow -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?q=80&w=2000&auto=format&fit=crop" 
+                 alt="Luxury Master Suite Bed" 
+                 class="w-full h-full object-cover filter brightness-40 scale-105 transition-transform duration-10000 hover:scale-100">
+            <div class="absolute inset-0 bg-gradient-to-t from-obsidian-950 via-obsidian-950/75 to-obsidian-950/40"></div>
+            <div class="absolute inset-0 bg-radial-glow opacity-80"></div>
+        </div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-6 md:px-12 text-center mt-10">
+            <!-- Badge -->
+            <div class="inline-flex items-center gap-3 px-5 py-2 rounded-full glass-panel border border-gold/30 mb-8 animate-pulse">
+                <i class="fa-solid fa-crown text-gold text-xs"></i>
+                <span class="text-[11px] uppercase tracking-[0.3em] text-gold font-medium">Haute Couture Sleep Architecture</span>
+            </div>
+
+            <h1 class="font-serif text-5xl sm:text-7xl lg:text-8xl font-normal tracking-tight text-white mb-6 leading-tight">
+                Bespoke Luxury <span class="italic font-light text-gold-gradient">Sleep Systems</span>
+            </h1>
+
+            <p class="max-w-3xl mx-auto text-gray-300 text-sm sm:text-base md:text-lg font-light leading-relaxed mb-10 tracking-wide">
+                Engineered for optimal spinal alignment, crafted with rare sustainable hardwoods, hand-tufted organic silk, and custom tailored from Single to Royal King dimensions.
+            </p>
+
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-5 mb-16">
+                <a href="#customizing" class="w-full sm:w-auto px-9 py-4 bg-gold-gradient text-obsidian-950 text-xs uppercase tracking-[0.2em] font-bold rounded-sm hover:shadow-lg hover:shadow-gold/20 transition-all duration-300">
+                    Launch Interactive Studio
+                </a>
+                <a href="#services" class="w-full sm:w-auto px-9 py-4 glass-panel border border-gold/40 text-white text-xs uppercase tracking-[0.2em] font-medium rounded-sm hover:border-gold hover:text-gold transition-all duration-300">
+                    Explore Standard Sizes
+                </a>
+            </div>
+
+            <!-- Stats Ticker Bar -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 pt-10 border-t border-white/10 max-w-5xl mx-auto">
+                <div class="text-center p-3">
+                    <div class="font-serif text-3xl md:text-4xl text-gold mb-1">100%</div>
+                    <div class="text-[10px] uppercase tracking-widest text-gray-400">Handcrafted Hardwood</div>
+                </div>
+                <div class="text-center p-3">
+                    <div class="font-serif text-3xl md:text-4xl text-gold mb-1">30,000+</div>
+                    <div class="text-[10px] uppercase tracking-widest text-gray-400">Bespoke Combinations</div>
+                </div>
+                <div class="text-center p-3">
+                    <div class="font-serif text-3xl md:text-4xl text-gold mb-1">15 Year</div>
+                    <div class="text-[10px] uppercase tracking-widest text-gray-400">Masterframe Warranty</div>
+                </div>
+                <div class="text-center p-3">
+                    <div class="font-serif text-3xl md:text-4xl text-gold mb-1">100 Night</div>
+                    <div class="text-[10px] uppercase tracking-widest text-gray-400">Home Sleep Trial</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-24 bg-obsidian-900 relative">
+        <div class="max-w-7xl mx-auto px-6 md:px-12">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <!-- Left Image Grid -->
+                <div class="lg:col-span-6 relative">
+                    <div class="relative z-10 rounded-sm overflow-hidden border border-gold/20 gold-glow">
+                        <img src="https://images.unsplash.com/photo-1616046229478-9901c5536a45?q=80&w=1200&auto=format&fit=crop" 
+                             alt="Artisanal Bedmaking" 
+                             class="w-full h-[460px] object-cover hover:scale-105 transition-transform duration-700">
+                    </div>
+                    <div class="hidden sm:block absolute -bottom-8 -right-8 w-3/5 z-20 rounded-sm overflow-hidden border-2 border-gold/40 shadow-2xl">
+                        <img src="https://images.unsplash.com/photo-1582582621959-48d273528920?q=80&w=800&auto=format&fit=crop" 
+                             alt="Hardwood Craftsmanship" 
+                             class="w-full h-[220px] object-cover">
+                    </div>
+                    <div class="absolute -top-6 -left-6 w-24 h-24 border-l-2 border-t-2 border-gold/40 z-0"></div>
+                </div>
+
+                <!-- Right Narrative Column -->
+                <div class="lg:col-span-6 lg:pl-6">
+                    <div class="inline-flex items-center gap-2 mb-3">
+                        <span class="w-8 h-[1px] bg-gold"></span>
+                        <span class="text-xs uppercase tracking-[0.3em] text-gold font-medium">Artisanal Mastery</span>
+                    </div>
+                    <h2 class="font-serif text-4xl sm:text-5xl font-normal text-white mb-6 leading-tight">
+                        Where Heritage <span class="italic text-gold-gradient">Craftsmanship</span> Meets Ergonomic Science
+                    </h2>
+                    <p class="text-gray-300 text-sm leading-relaxed mb-6 font-light">
+                        At AURA Sleep Sanctuary, we believe sleep is the ultimate luxury. Every bed and mattress system is hand-built to order by master artisans using sustainably harvested timber, natural Talalay latex, organic alpaca fleece, and hand-coiled pocketed titanium springs.
+                    </p>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-8 font-light">
+                        We transcend off-the-shelf mass furniture. Whether you require specific orthopaedic support, non-standard room dimensions, rare mahogany frame detailing, or Italian top-grain leather upholstery—our workshop brings your exact design vision into reality.
+                    </p>
+
+                    <!-- Key Pillars Grid -->
+                    <div class="grid grid-cols-2 gap-6 mb-8 pt-4 border-t border-white/10">
+                        <div class="flex items-start gap-3">
+                            <i class="fa-solid fa-tree text-gold text-lg mt-1"></i>
+                            <div>
+                                <h4 class="text-white text-xs uppercase tracking-wider font-semibold">Solid Hardwood Cores</h4>
+                                <p class="text-gray-400 text-xs font-light mt-0.5">Kiln-dried American Walnut, Oak & Ebony Mahogany.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <i class="fa-solid fa-feather-pointed text-gold text-lg mt-1"></i>
+                            <div>
+                                <h4 class="text-white text-xs uppercase tracking-wider font-semibold">Organic Eco-Layers</h4>
+                                <p class="text-gray-400 text-xs font-light mt-0.5">Hypoallergenic horsehair, cashmere & silk hand-tufting.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="#customizing" class="inline-flex items-center gap-3 text-gold text-xs uppercase tracking-[0.2em] font-semibold hover:gap-5 transition-all">
+                        Build Your Personal Design <i class="fa-solid fa-arrow-right-long"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="py-24 bg-obsidian-950 relative">
+        <div class="max-w-7xl mx-auto px-6 md:px-12">
+            <!-- Section Header -->
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <div class="inline-flex items-center gap-2 mb-3">
+                    <span class="w-6 h-[1px] bg-gold"></span>
+                    <span class="text-xs uppercase tracking-[0.3em] text-gold font-medium">Dimension Guide & Services</span>
+                    <span class="w-6 h-[1px] bg-gold"></span>
+                </div>
+                <h2 class="font-serif text-4xl sm:text-5xl text-white font-normal mb-4">
+                    Tailored <span class="italic text-gold-gradient">Sizes & Concierge</span>
+                </h2>
+                <p class="text-gray-400 text-sm font-light">
+                    From single executive suites to royal king estates, select from classic proportions or input bespoke dimensions down to the millimeter.
+                </p>
+            </div>
+
+            <!-- Size Cards Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+                <!-- Single / Twin -->
+                <div class="glass-card rounded-sm p-8 transition-all duration-300 hover:-translate-y-2 flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="text-[10px] uppercase font-mono tracking-widest text-gold bg-gold/10 px-2 py-1 rounded">Compact Lux</span>
+                            <i class="fa-solid fa-bed text-gold text-xl"></i>
+                        </div>
+                        <h3 class="font-serif text-2xl text-white mb-2">Single / Twin XL</h3>
+                        <p class="text-gold text-xs font-mono mb-4">90 x 190 cm — 38" x 75"</p>
+                        <p class="text-gray-400 text-xs font-light leading-relaxed mb-6">
+                            Ideal for boutique guest quarters, luxury daybeds, and personal sanctuaries requiring uncompromised orthopaedic support.
+                        </p>
+                    </div>
+                    <button onclick="quickSelectSize('Single / Twin XL')" class="w-full py-2.5 glass-panel border border-gold/30 text-gold text-xs font-semibold uppercase tracking-wider rounded-sm hover:bg-gold hover:text-obsidian-950 transition-all">
+                        Customize This Size
+                    </button>
+                </div>
+
+                <!-- Queen -->
+                <div class="glass-card rounded-sm p-8 transition-all duration-300 hover:-translate-y-2 flex flex-col justify-between border-gold/40 gold-glow">
+                    <div>
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="text-[10px] uppercase font-mono tracking-widest text-obsidian-950 bg-gold px-2 py-1 rounded font-bold">Most Popular</span>
+                            <i class="fa-solid fa-crown text-gold text-xl"></i>
+                        </div>
+                        <h3 class="font-serif text-2xl text-white mb-2">Executive Queen</h3>
+                        <p class="text-gold text-xs font-mono mb-4">160 x 200 cm — 60" x 80"</p>
+                        <p class="text-gray-400 text-xs font-light leading-relaxed mb-6">
+                            The international standard for primary bedrooms. Balanced proportions offering spacious motion-isolation for couples.
+                        </p>
+                    </div>
+                    <button onclick="quickSelectSize('Executive Queen')" class="w-full py-2.5 bg-gold-gradient text-obsidian-950 text-xs font-bold uppercase tracking-wider rounded-sm hover:brightness-110 transition-all">
+                        Customize This Size
+                    </button>
+                </div>
+
+                <!-- King -->
+                <div class="glass-card rounded-sm p-8 transition-all duration-300 hover:-translate-y-2 flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="text-[10px] uppercase font-mono tracking-widest text-gold bg-gold/10 px-2 py-1 rounded">Grand Suite</span>
+                            <i class="fa-solid fa-gem text-gold text-xl"></i>
+                        </div>
+                        <h3 class="font-serif text-2xl text-white mb-2">Grand King / Super King</h3>
+                        <p class="text-gold text-xs font-mono mb-4">180 x 200 cm — 76" x 80"</p>
+                        <p class="text-gray-400 text-xs font-light leading-relaxed mb-6">
+                            Expansive surface area engineered with dual-zone comfort cores so each partner can personalize their ideal firmness level.
+                        </p>
+                    </div>
+                    <button onclick="quickSelectSize('Grand King')" class="w-full py-2.5 glass-panel border border-gold/30 text-gold text-xs font-semibold uppercase tracking-wider rounded-sm hover:bg-gold hover:text-obsidian-950 transition-all">
+                        Customize This Size
+                    </button>
+                </div>
+            </div>
+
+            <!-- Concierge Services Highlights -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 pt-10 border-t border-white/10">
+                <div class="flex gap-4 items-start">
+                    <div class="w-12 h-12 rounded-full border border-gold/30 flex items-center justify-center text-gold bg-obsidian-900 shrink-0">
+                        <i class="fa-solid fa-truck-ramp-box text-lg"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-white text-sm uppercase tracking-wider font-semibold mb-1">White-Glove Installation</h4>
+                        <p class="text-gray-400 text-xs font-light leading-relaxed">Complimentary delivery, in-room assembly, alignment check, and legacy mattress removal.</p>
+                    </div>
+                </div>
+
+                <div class="flex gap-4 items-start">
+                    <div class="w-12 h-12 rounded-full border border-gold/30 flex items-center justify-center text-gold bg-obsidian-900 shrink-0">
+                        <i class="fa-solid fa-user-doctor text-lg"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-white text-sm uppercase tracking-wider font-semibold mb-1">Ergonomic Sleep Audit</h4>
+                        <p class="text-gray-400 text-xs font-light leading-relaxed">Private consultation with certified somnologists to analyze posture, pressure points, and thermal balance.</p>
+                    </div>
+                </div>
+
+                <div class="flex gap-4 items-start">
+                    <div class="w-12 h-12 rounded-full border border-gold/30 flex items-center justify-center text-gold bg-obsidian-900 shrink-0">
+                        <i class="fa-solid fa-infinity text-lg"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-white text-sm uppercase tracking-wider font-semibold mb-1">Lifetime Frame Guarantee</h4>
+                        <p class="text-gray-400 text-xs font-light leading-relaxed">Our hand-mortised hardwood bedframes are structurally warranted for life against creaks and stress.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="customizing" class="py-24 bg-obsidian-900 border-y border-gold/20 relative">
+        <div class="max-w-7xl mx-auto px-6 md:px-12">
+            <!-- Section Title -->
+            <div class="text-center max-w-3xl mx-auto mb-14">
+                <div class="inline-flex items-center gap-2 mb-3">
+                    <i class="fa-solid fa-sliders text-gold text-xs"></i>
+                    <span class="text-xs uppercase tracking-[0.3em] text-gold font-medium">Bespoke Bedsmith Studio</span>
+                </div>
+                <h2 class="font-serif text-4xl sm:text-5xl text-white font-normal mb-4">
+                    The <span class="italic text-gold-gradient">Customization</span> Atelier
+                </h2>
+                <p class="text-gray-400 text-sm font-light">
+                    Select your dimensions, core mattress layers, solid wood species, luxury upholstery fabric, and headboard detailing below to generate your pre-filled quote dossier.
+                </p>
+            </div>
+
+            <!-- Main Customizer Grid Layout -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+                <!-- Left: Interactive Step-by-Step Selection Panel -->
+                <div class="lg:col-span-7 space-y-8">
+                    <!-- Step Tabs Bar -->
+                    <div class="flex overflow-x-auto gap-2 pb-2 scrollbar-none border-b border-white/10">
+                        <button onclick="switchStep(1)" id="tab-step-1" class="tab-btn active px-4 py-2.5 text-xs uppercase tracking-wider font-medium rounded-sm border border-white/10 text-gray-300 shrink-0">
+                            1. Size & Specs
+                        </button>
+                        <button onclick="switchStep(2)" id="tab-step-2" class="tab-btn px-4 py-2.5 text-xs uppercase tracking-wider font-medium rounded-sm border border-white/10 text-gray-300 shrink-0">
+                            2. Mattress Core
+                        </button>
+                        <button onclick="switchStep(3)" id="tab-step-3" class="tab-btn px-4 py-2.5 text-xs uppercase tracking-wider font-medium rounded-sm border border-white/10 text-gray-300 shrink-0">
+                            3. Wood Frame
+                        </button>
+                        <button onclick="switchStep(4)" id="tab-step-4" class="tab-btn px-4 py-2.5 text-xs uppercase tracking-wider font-medium rounded-sm border border-white/10 text-gray-300 shrink-0">
+                            4. Upholstery
+                        </button>
+                        <button onclick="switchStep(5)" id="tab-step-5" class="tab-btn px-4 py-2.5 text-xs uppercase tracking-wider font-medium rounded-sm border border-white/10 text-gray-300 shrink-0">
+                            5. Headboard & Metal
+                        </button>
+                    </div>
+
+                    <!-- STEP 1: SIZE SELECTOR -->
+                    <div id="step-content-1" class="step-panel space-y-4">
+                        <h3 class="font-serif text-2xl text-white mb-2">Step 1: Choose Mattress & Frame Dimensions</h3>
+                        <p class="text-xs text-gray-400 mb-4">Select standard dimensions or toggle custom measurements.</p>
+                        
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div onclick="selectOption('size', 'Single / Twin XL', 1200)" class="option-card size-opt selected glass-panel p-4 rounded-sm cursor-pointer border border-white/10 hover:border-gold/50 transition-all">
+                                <div class="flex justify-between items-center mb-1">
+                                    <span class="text-white text-sm font-semibold">Single / Twin XL</span>
+                                    <span class="text-gold text-xs font-mono">+$1,200</span>
+                                </div>
+                                <p class="text-[11px] text-gray-400">90 x 190 cm (38" x 75")</p>
+                            </div>
+
+                            <div onclick="selectOption('size', 'Double / Full', 1800)" class="option-card size-opt glass-panel p-4 rounded-sm cursor-pointer border border-white/10 hover:border-gold/50 transition-all">
+                                <div class="flex justify-between items-center mb-1">
+                                    <span class="text-white text-sm font-semibold">Double / Full</span>
+                                    <span class="text-gold text-xs font-mono">+$1,800</span>
+                                </div>
+                                <p class="text-[11px] text-gray-400">140 x 190 cm (54" x 75")</p>
+                            </div>
+
+                            <div onclick="selectOption('size', 'Executive Queen', 2400)" class="option-card size-opt glass-panel p-4 rounded-sm cursor-pointer border border-white/10 hover:border-gold/50 transition-all">
+                                <div class="flex justify-between items-center mb-1">
+                                    <span class="text-white text-sm font-semibold">Executive Queen</span>
+                                    <span class="text-gold text-xs font-mono">+$2,400</span>
+                                </div>
+                                <p class="text-[11px] text-gray-400">160 x 200 cm (60" x 80")</p>
+                            </div>
+
+                            <div onclick="selectOption('size', 'Grand King', 3100)" class="option-card size-opt glass-panel p-4 rounded-sm cursor-pointer border border-white/10 hover:border-gold/50 transition-all">
+                                <div class="flex justify-between items-center mb-1">
+                                    <span class="text-white text-sm font-semibold">Grand King</span>
+                                    <span class="text-gold text-xs font-mono">+$3,100</span>
+                                </div>
+                                <p class="text-[11px] text-gray-400">180 x 200 cm (76" x 80")</p>
+                            </div>
+
+                            <div onclick="selectOption('size', 'Royal Emperor Custom', 4200)" class="option-card size-opt glass-panel p-4 rounded-sm cursor-pointer border border-white/10 hover:border-gold/50 transition-all col-span-1 sm:col-span-2">
+                                <div class="flex justify-between items-center mb-1">
+                                    <span class="text-white text-sm font-semibold">Bespoke Royal Emperor (Custom cm)</span>
+                                    <span class="text-gold text-xs font-mono">+$4,200</span>
+                                </div>
+                                <p class="text-[11px] text-gray-400">Tailored to exact architectural measurements for oversized penthouses & yachts.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- STEP 2: MATTRESS CORE MATERIALS -->
+                    <div id="step-content-2" class="step-panel hidden space-y-4">
+                        <h3 class="font-serif text-2xl text-white mb-2">Step 2: Choose Internal Mattress Technology</h3>
+                        <p class="text-xs text-gray-400 mb-4">Select your pressure-relieving core & natural upholstery layers.</p>
+
+                        <div class="grid grid-cols-1 gap-4">
+                            <div onclick="selectOption('mattress', 'Organic Talalay Latex & Cashmere', 1400)" class="option-card mattress-opt selected glass-panel p-5 rounded-sm cursor-pointer border border-white/10 hover:border-gold/50 transition-all">
+                                <div class="flex justify-between items-center mb-2">
+                                    <span class="text-white text-sm font-semibold">Organic Talalay Latex & Hand-Tufted Cashmere</span>
+                                    <span class="text-gold text-xs font-mono">+$1,400</span>
+                                </div>
+                                <p class="text-xs text-gray-400 font-light leading-relaxed">Hypoallergenic, breathable 100% natural tree-sap latex with temperature-regulating organic cashmere top layers.</p>
+                            </div>
+
+                            <div onclick="selectOption('mattress', 'Pocketed Micro-Coils & Cloud Memory Foam', 1100)" class="option-card mattress-opt glass-panel p-5 rounded-sm cursor-pointer border border-white/10 hover:border-gold/50 transition-all">
+                                <div class="flex justify-between items-center mb-2">
+                                    <span class="text-white text-sm font-semibold">7-Zone Pocketed Titanium Coils & Cooling Gel Foam</span>
+                                    <span class="text-gold text-xs font-mono">+$1,100</span>
+                                </div>
+                                <p class="text-xs text-gray-400 font-light leading-relaxed">Zero motion transfer micro-coils targeted for lumbar support, topped with NASA cooling gel memory foam.</p>
+                            </div>
+
+                            <div onclick="selectOption('mattress', 'Grand Imperial Horsehair & Royal Silk', 2200)" class="option-card mattress-opt glass-panel p-5 rounded-sm cursor-pointer border border-white/10 hover:border-gold/50 transition-all">
+                                <div class="flex justify-between items-center mb-2">
+                                    <span class="text-white text-sm font-semibold">Grand Imperial Horsehair, Alpaca Fleece & Mulberry Silk</span>
+                                    <span class="text-gold text-xs font-mono">+$2,200</span>
+                                </div>
+                                <p class="text-xs text-gray-400 font-light leading-relaxed">The peak of traditional luxury bedmaking. Naturally springy, moisture-wicking horsetail hair wrapped in rare silk.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- STEP 3: WOOD & CRAFTSMANSHIP -->
+                    <div id="step-content-3" class="step-panel hidden space-y-4">
+                        <h3 class="font-serif text-2xl text-white mb-2">Step 3: Solid Wood Frame & Craftsmanship</h3>
+                        <p class="text-xs text-gray-400 mb-4">Sustainably harvested hardwoods crafted with traditional mortise-and-tenon joinery.</p>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div onclick="selectOption('wood', 'American Black Walnut', 1600)" class="option-card wood-opt selected glass-panel p-4 rounded-sm cursor-pointer border border-white/10 hover:border-gold/50 transition-all">
+                                <div class="flex justify-between items-center mb-1">
+                                    <span class="text-white text-sm font-semibold">American Black Walnut</span>
+                                    <span class="text-gold text-xs font-mono">+$1,600</span>
+                                </div>
+                                <p class="text-[11px] text-gray-400">Deep chocolate tones with warm fluid grain lines.</p>
+                            </div>
+
+                            <div onclick="selectOption('wood', 'Aged Smoky French Oak', 1300)" class="option-card wood-opt glass-panel p-4 rounded-sm cursor-pointer border border-white/10 hover:border-gold/50 transition-all">
+                                <div class="flex justify-between items-center mb-1">
+                                    <span class="text-white text-sm font-semibold">Aged Smoky French Oak</span>
+                                    <span class="text-gold text-xs font-mono">+$1,300</span>
+                                </div>
+                                <p class="text-[11px] text-gray-400">Muted organic texture with subtle cerused white undertones.</p>
+                            </div>
+
+                            <div onclick="selectOption('wood', 'Ebony Stained Mahogany', 1900)" class="option-card wood-opt glass-panel p-4 rounded-sm cursor-pointer border border-white/10 hover:border-gold/50 transition-all">
+                                <div class="flex justify-between items-center mb-1">
+                                    <span class="text-white text-sm font-semibold">Ebony Stained Mahogany</span>
+                                    <span class="text-gold text-xs font-mono">+$1,900</span>
+                                </div>
+                                <p class="text-[11px] text-gray-400">Ultra-sleek obsidian satin polish for contemporary luxury.</p>
+                            </div>
+
+                            <div onclick="selectOption('wood', 'Natural Scandic Ash', 1000)" class="option-card wood-opt glass-panel p-4 rounded-sm cursor-pointer border border-white/10 hover:border-gold/50 transition-all">
+                                <div class="flex justify-between items-center mb-1">
+                                    <span class="text-white text-sm font-semibold">Natural Scandic Ash</span>
+                                    <span class="text-gold text-xs font-mono">+$1,000</span>
+                                </div>
+                                <p class="text-[11px] text-gray-400">Light champagne hue with clean linear grain character.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- STEP 4: UPHOLSTERY FABRICS -->
+                    <div id="step-content-4" class="step-panel hidden space-y-4">
+                        <h3 class="font-serif text-2xl text-white mb-2">Step 4: Upholstery & Fabric/Leather</h3>
+                        <p class="text-xs text-gray-400 mb-4">Stain-resistant high-rub count luxury textiles from Italian and Belgian mills.</p>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div onclick="selectOption('fabric', 'Royal Velvet Charcoal', 800)" class="option-card fabric-opt selected glass-panel p-4 rounded-sm cursor-pointer border border-white/10 hover:border-gold/50 transition-all">
+                                <div class="flex justify-between items-center mb-1">
+                                    <span class="text-white text-sm font-semibold">Royal Velvet (Deep Charcoal)</span>
+                                    <span class="text-gold text-xs font-mono">+$800</span>
+                                </div>
+                                <p class="text-[11px] text-gray-400">Plush plush pile with rich light refraction.</p>
+                            </div>
+
+                            <div onclick="selectOption('fabric', 'Belgian Natural Linen', 950)" class="option-card fabric-opt glass-panel p-4 rounded-sm cursor-pointer border border-white/10 hover:border-gold/50 transition-all">
+                                <div class="flex justify-between items-center mb-1">
+                                    <span class="text-white text-sm font-semibold">Belgian Flax Linen (Oatmeal)</span>
+                                    <span class="text-gold text-xs font-mono">+$950</span>
+                                </div>
+                                <p class="text-[11px] text-gray-400">100% pure organic flax with relaxed luxury weave.</p>
+                            </div>
+
+                            <div onclick="selectOption('fabric', 'Italian Top-Grain Aniline Leather', 1800)" class="option-card fabric-opt glass-panel p-4 rounded-sm cursor-pointer border border-white/10 hover:border-gold/50 transition-all">
+                                <div class="flex justify-between items-center mb-1">
+                                    <span class="text-white text-sm font-semibold">Italian Top-Grain Leather (Cognac)</span>
+                                    <span class="text-gold text-xs font-mono">+$1,800</span>
+                                </div>
+                                <p class="text-[11px] text-gray-400">Hand-waxed supple hide that develops a timeless patina.</p>
+                            </div>
+
+                            <div onclick="selectOption('fabric', 'Textured Alpaca Bouclé', 1200)" class="option-card fabric-opt glass-panel p-4 rounded-sm cursor-pointer border border-white/10 hover:border-gold/50 transition-all">
+                                <div class="flex justify-between items-center mb-1">
+                                    <span class="text-white text-sm font-semibold">Textured Alpaca Bouclé (Cream)</span>
+                                    <span class="text-gold text-xs font-mono">+$1,200</span>
+                                </div>
+                                <p class="text-[11px] text-gray-400">Cozy tactile warmth with modern architectural depth.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- STEP 5: HEADBOARD ARCHITECTURE & METALS -->
+                    <div id="step-content-5" class="step-panel hidden space-y-4">
+                        <h3 class="font-serif text-2xl text-white mb-2">Step 5: Headboard Style & Metallic Accents</h3>
+                        <p class="text-xs text-gray-400 mb-4">Finalize your headboard geometry and precision metal hardware fittings.</p>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div onclick="selectOption('headboard', 'Vertical Channeling & Brushed Brass', 1100)" class="option-card headboard-opt selected glass-panel p-4 rounded-sm cursor-pointer border border-white/10 hover:border-gold/50 transition-all">
+                                <div class="flex justify-between items-center mb-1">
+                                    <span class="text-white text-sm font-semibold">Vertical Channeling + Brushed Brass</span>
+                                    <span class="text-gold text-xs font-mono">+$1,100</span>
+                                </div>
+                                <p class="text-[11px] text-gray-400">Tall floor-standing channels framed in warm brass.</p>
+                            </div>
+
+                            <div onclick="selectOption('headboard', 'Deep Button Tufted & Rose Gold', 1350)" class="option-card headboard-opt glass-panel p-4 rounded-sm cursor-pointer border border-white/10 hover:border-gold/50 transition-all">
+                                <div class="flex justify-between items-center mb-1">
+                                    <span class="text-white text-sm font-semibold">Chesterfield Tufting + Rose Gold</span>
+                                    <span class="text-gold text-xs font-mono">+$1,350</span>
+                                </div>
+                                <p class="text-[11px] text-gray-400">Classic artisan diamond tufting with subtle metallic studs.</p>
+                            </div>
+
+                            <div onclick="selectOption('headboard', 'Floating Minimalist Wingback & Matte Obsidian', 900)" class="option-card headboard-opt glass-panel p-4 rounded-sm cursor-pointer border border-white/10 hover:border-gold/50 transition-all">
+                                <div class="flex justify-between items-center mb-1">
+                                    <span class="text-white text-sm font-semibold">Floating Wingback + Matte Obsidian</span>
+                                    <span class="text-gold text-xs font-mono">+$900</span>
+                                </div>
+                                <p class="text-[11px] text-gray-400">Modern low-profile silhouette with integrated LED backlight channels.</p>
+                            </div>
+
+                            <div onclick="selectOption('headboard', 'Pillowback Cushion & Polished Bronze', 1050)" class="option-card headboard-opt glass-panel p-4 rounded-sm cursor-pointer border border-white/10 hover:border-gold/50 transition-all">
+                                <div class="flex justify-between items-center mb-1">
+                                    <span class="text-white text-sm font-semibold">Over-Sized Pillowback + Polished Bronze</span>
+                                    <span class="text-gold text-xs font-mono">+$1,050</span>
+                                </div>
+                                <p class="text-[11px] text-gray-400">Dual detachable goose-down lumbar headrest pillows.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step Navigation Buttons -->
+                    <div class="flex justify-between items-center pt-6 border-t border-white/10">
+                        <button onclick="prevStep()" id="prev-btn" class="px-6 py-2.5 glass-panel text-gray-400 text-xs uppercase tracking-wider font-semibold rounded-sm hover:text-white transition-colors invisible">
+                            <i class="fa-solid fa-arrow-left mr-2"></i> Previous
+                        </button>
+                        <button onclick="nextStep()" id="next-btn" class="px-7 py-2.5 bg-gold-gradient text-obsidian-950 text-xs uppercase tracking-wider font-bold rounded-sm hover:brightness-110 transition-all gold-glow">
+                            Next Step <i class="fa-solid fa-arrow-right ml-2"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-5">
+                    <div class="glass-panel p-8 rounded-sm border border-gold/30 sticky top-28 gold-glow">
+                        <!-- Dynamic Visual Header Indicator -->
+                        <div class="relative h-48 rounded-sm overflow-hidden mb-6 border border-white/10">
+                            <img id="preview-img" src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?q=80&w=800&auto=format&fit=crop" alt="Bed Visual Preview" class="w-full h-full object-cover transition-all duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-obsidian-950 via-transparent to-transparent"></div>
+                            <span class="absolute top-3 left-3 bg-obsidian-950/80 backdrop-blur-md text-gold font-mono text-[10px] px-2.5 py-1 rounded border border-gold/30">Live Atelier Spec</span>
+                        </div>
+
+                        <h3 class="font-serif text-2xl text-white mb-4">Custom Configuration Summary</h3>
+
+                        <!-- Selected Options Summary List -->
+                        <div class="space-y-3 mb-6 text-xs font-light divide-y divide-white/5">
+                            <div class="flex justify-between pt-2">
+                                <span class="text-gray-400">Selected Size:</span>
+                                <span id="summary-size" class="text-gold font-medium">Single / Twin XL</span>
+                            </div>
+                            <div class="flex justify-between pt-2">
+                                <span class="text-gray-400">Mattress Core:</span>
+                                <span id="summary-mattress" class="text-gold font-medium">Organic Talalay Latex</span>
+                            </div>
+                            <div class="flex justify-between pt-2">
+                                <span class="text-gray-400">Wood Frame:</span>
+                                <span id="summary-wood" class="text-gold font-medium">American Black Walnut</span>
+                            </div>
+                            <div class="flex justify-between pt-2">
+                                <span class="text-gray-400">Upholstery Fabric:</span>
+                                <span id="summary-fabric" class="text-gold font-medium">Royal Velvet Charcoal</span>
+                            </div>
+                            <div class="flex justify-between pt-2">
+                                <span class="text-gray-400">Headboard & Metal:</span>
+                                <span id="summary-headboard" class="text-gold font-medium">Vertical Channeling</span>
+                            </div>
+                            <div class="flex justify-between pt-2">
+                                <span class="text-gray-400">Estimated Lead Time:</span>
+                                <span class="text-gray-200 font-mono">14 - 21 Business Days</span>
+                            </div>
+                        </div>
+
+                        <!-- Price Breakdown -->
+                        <div class="p-4 bg-obsidian-950/80 rounded-sm border border-gold/20 mb-6">
+                            <div class="flex justify-between items-center">
+                                <span class="text-xs uppercase tracking-widest text-gray-400">Estimated Investment</span>
+                                <span id="total-price" class="font-serif text-3xl font-bold text-gold">$5,000</span>
+                            </div>
+                            <p class="text-[10px] text-gray-400 mt-1">Includes white-glove setup & 15-year warranty.</p>
+                        </div>
+
+                        <!-- Actions -->
+                        <div class="space-y-3">
+                            <button onclick="applySpecToForm()" class="w-full py-3.5 bg-gold-gradient text-obsidian-950 text-xs font-bold uppercase tracking-[0.2em] rounded-sm hover:brightness-110 transition-all gold-glow">
+                                Reserve & Book VIP Consultation
+                            </button>
+                            <button onclick="downloadDesignSpec()" class="w-full py-2.5 glass-panel border border-white/20 text-gray-300 text-xs font-medium uppercase tracking-wider rounded-sm hover:border-gold hover:text-gold transition-all">
+                                <i class="fa-solid fa-file-arrow-down mr-2"></i> Save Spec Summary Sheet
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="materials" class="py-24 bg-obsidian-950 relative">
+        <div class="max-w-7xl mx-auto px-6 md:px-12">
+            <!-- Header -->
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <div class="inline-flex items-center gap-2 mb-3">
+                    <span class="w-6 h-[1px] bg-gold"></span>
+                    <span class="text-xs uppercase tracking-[0.3em] text-gold font-medium">Tactile Excellence</span>
+                    <span class="w-6 h-[1px] bg-gold"></span>
+                </div>
+                <h2 class="font-serif text-4xl sm:text-5xl text-white font-normal mb-4">
+                    Artisanal <span class="italic text-gold-gradient">Material Library</span>
+                </h2>
+                <p class="text-gray-400 text-sm font-light">
+                    Inspect our raw hardwood grain finishes, natural mattress padding, and hand-woven luxury upholstery textiles.
+                </p>
+            </div>
+
+            <!-- Material Library Swatch Showcase Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Swatch 1 -->
+                <div class="glass-card rounded-sm overflow-hidden p-6 border border-gold/10 group hover:border-gold/40 transition-all">
+                    <div class="h-40 rounded-sm overflow-hidden mb-4 relative">
+                        <img src="https://images.unsplash.com/photo-1546484475-7f7bd55792da?q=80&w=600&auto=format&fit=crop" alt="Walnut Wood" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                        <span class="absolute top-2 left-2 bg-obsidian-950/80 text-gold text-[10px] font-mono px-2 py-0.5 rounded">Timber</span>
+                    </div>
+                    <h4 class="font-serif text-xl text-white mb-1">American Black Walnut</h4>
+                    <p class="text-xs text-gray-400 font-light leading-relaxed mb-4">Kiln-dried 100% solid hardwood with organic deep chocolate grain variations.</p>
+                    <span class="text-[10px] uppercase tracking-widest text-gold font-semibold">Ultra Durable • Hand Waxed</span>
+                </div>
+
+                <!-- Swatch 2 -->
+                <div class="glass-card rounded-sm overflow-hidden p-6 border border-gold/10 group hover:border-gold/40 transition-all">
+                    <div class="h-40 rounded-sm overflow-hidden mb-4 relative">
+                        <img src="https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?q=80&w=600&auto=format&fit=crop" alt="Latex Foam" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                        <span class="absolute top-2 left-2 bg-obsidian-950/80 text-gold text-[10px] font-mono px-2 py-0.5 rounded">Core</span>
+                    </div>
+                    <h4 class="font-serif text-xl text-white mb-1">Organic Talalay Latex</h4>
+                    <p class="text-xs text-gray-400 font-light leading-relaxed mb-4">Derived from natural rubber trees. Self-ventilating matrix offering buoyant pressure relief.</p>
+                    <span class="text-[10px] uppercase tracking-widest text-gold font-semibold">Hypoallergenic • Zero VOC</span>
+                </div>
+
+                <!-- Swatch 3 -->
+                <div class="glass-card rounded-sm overflow-hidden p-6 border border-gold/10 group hover:border-gold/40 transition-all">
+                    <div class="h-40 rounded-sm overflow-hidden mb-4 relative">
+                        <img src="https://images.unsplash.com/photo-1579656381226-5fc0f0100c3b?q=80&w=600&auto=format&fit=crop" alt="Velvet Textile" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                        <span class="absolute top-2 left-2 bg-obsidian-950/80 text-gold text-[10px] font-mono px-2 py-0.5 rounded">Textile</span>
+                    </div>
+                    <h4 class="font-serif text-xl text-white mb-1">Belgian Flax Linen</h4>
+                    <p class="text-xs text-gray-400 font-light leading-relaxed mb-4">Woven in traditional European mills. Exceptionally soft, breathable, and thermoregulating.</p>
+                    <span class="text-[10px] uppercase tracking-widest text-gold font-semibold">100,000+ Rub Count</span>
+                </div>
+
+                <!-- Swatch 4 -->
+                <div class="glass-card rounded-sm overflow-hidden p-6 border border-gold/10 group hover:border-gold/40 transition-all">
+                    <div class="h-40 rounded-sm overflow-hidden mb-4 relative">
+                        <img src="https://images.unsplash.com/photo-1558317374-067fb5f30001?q=80&w=600&auto=format&fit=crop" alt="Brass Accent" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                        <span class="absolute top-2 left-2 bg-obsidian-950/80 text-gold text-[10px] font-mono px-2 py-0.5 rounded">Hardware</span>
+                    </div>
+                    <h4 class="font-serif text-xl text-white mb-1">Brushed Pure Brass</h4>
+                    <p class="text-xs text-gray-400 font-light leading-relaxed mb-4">Hand-finished metallic framing trim that develops a distinguished vintage character.</p>
+                    <span class="text-[10px] uppercase tracking-widest text-gold font-semibold">Precision Machined</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-24 bg-obsidian-900 border-t border-gold/10 relative">
+        <div class="max-w-7xl mx-auto px-6 md:px-12">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                <!-- Left Details Box -->
+                <div class="lg:col-span-5">
+                    <div class="inline-flex items-center gap-2 mb-3">
+                        <span class="w-6 h-[1px] bg-gold"></span>
+                        <span class="text-xs uppercase tracking-[0.3em] text-gold font-medium">Bespoke Concierge</span>
+                    </div>
+                    <h2 class="font-serif text-4xl sm:text-5xl text-white font-normal mb-6">
+                        Reserve Your <span class="italic text-gold-gradient">Private Consultation</span>
+                    </h2>
+                    <p class="text-gray-300 text-xs sm:text-sm font-light leading-relaxed mb-8">
+                        Experience our material samples in person or meet with our Master Bedsmith to refine your custom specification sheet.
+                    </p>
+
+                    <!-- Contact Details -->
+                    <div class="space-y-6">
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-full border border-gold/30 flex items-center justify-center text-gold bg-obsidian-950 shrink-0">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xs uppercase tracking-wider text-gray-400 font-medium">Atelier Showroom</h4>
+                                <p class="text-sm text-white font-light">430 Park Avenue, Suite 1200, New York, NY 10022</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-full border border-gold/30 flex items-center justify-center text-gold bg-obsidian-950 shrink-0">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xs uppercase tracking-wider text-gray-400 font-medium">Concierge Direct Line</h4>
+                                <p class="text-sm text-white font-light">+1 (800) 795-AURA / +1 (212) 888-7711</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-full border border-gold/30 flex items-center justify-center text-gold bg-obsidian-950 shrink-0">
+                                <i class="fa-solid fa-clock"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xs uppercase tracking-wider text-gray-400 font-medium">Atelier Hours</h4>
+                                <p class="text-sm text-white font-light">Monday – Saturday: 10:00 AM – 7:00 PM</p>
+                                <p class="text-xs text-gray-400 font-light">Sunday: By Private VIP Appointment Only</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Form Box -->
+                <div class="lg:col-span-7">
+                    <form id="consultation-form" onsubmit="handleFormSubmit(event)" class="glass-panel p-8 sm:p-10 rounded-sm border border-gold/20">
+                        <h3 class="font-serif text-2xl text-white mb-6">VIP Custom Order & Consultation Booking</h3>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-6">
+                            <div>
+                                <label class="block text-[11px] uppercase tracking-widest text-gray-400 mb-2">First Name *</label>
+                                <input type="text" required placeholder="e.g. Victoria" class="w-full bg-obsidian-950 border border-white/10 rounded-sm px-4 py-3 text-sm text-white focus:outline-none focus:border-gold transition-colors">
+                            </div>
+                            <div>
+                                <label class="block text-[11px] uppercase tracking-widest text-gray-400 mb-2">Last Name *</label>
+                                <input type="text" required placeholder="e.g. Kensington" class="w-full bg-obsidian-950 border border-white/10 rounded-sm px-4 py-3 text-sm text-white focus:outline-none focus:border-gold transition-colors">
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-6">
+                            <div>
+                                <label class="block text-[11px] uppercase tracking-widest text-gray-400 mb-2">Direct Phone *</label>
+                                <input type="tel" required placeholder="+1 (555) 000-0000" class="w-full bg-obsidian-950 border border-white/10 rounded-sm px-4 py-3 text-sm text-white focus:outline-none focus:border-gold transition-colors">
+                            </div>
+                            <div>
+                                <label class="block text-[11px] uppercase tracking-widest text-gray-400 mb-2">Email Address *</label>
+                                <input type="email" required placeholder="victoria@domain.com" class="w-full bg-obsidian-950 border border-white/10 rounded-sm px-4 py-3 text-sm text-white focus:outline-none focus:border-gold transition-colors">
+                            </div>
+                        </div>
+
+                        <div class="mb-6">
+                            <label class="block text-[11px] uppercase tracking-widest text-gray-400 mb-2">Pre-Filled Customizer Specification Summary</label>
+                            <textarea id="form-specs-summary" rows="3" readonly class="w-full bg-obsidian-950/80 border border-gold/30 rounded-sm px-4 py-3 text-xs text-gold font-mono focus:outline-none resize-none"></textarea>
+                        </div>
+
+                        <div class="mb-6">
+                            <label class="block text-[11px] uppercase tracking-widest text-gray-400 mb-2">Additional Architectural or Room Requests</label>
+                            <textarea rows="3" placeholder="Mention room access constraints, special firmness requirements, or preferred delivery dates..." class="w-full bg-obsidian-950 border border-white/10 rounded-sm px-4 py-3 text-sm text-white focus:outline-none focus:border-gold transition-colors resize-none"></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full py-4 bg-gold-gradient text-obsidian-950 font-bold text-xs uppercase tracking-[0.2em] rounded-sm hover:brightness-110 transition-all gold-glow">
+                            Submit Consultation Request
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-obsidian-950 border-t border-gold/10 pt-16 pb-12 text-gray-400">
+        <div class="max-w-7xl mx-auto px-6 md:px-12">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 mb-16">
+                <!-- Brand -->
+                <div class="lg:col-span-2">
+                    <a href="#home" class="flex items-center gap-3 mb-6">
+                        <div class="w-8 h-8 rounded-full border border-gold flex items-center justify-center bg-obsidian-800">
+                            <span class="font-serif text-lg font-bold text-gold">A</span>
+                        </div>
+                        <span class="font-serif text-xl font-bold tracking-widest text-gold-gradient">AURA SLEEP</span>
+                    </a>
+                    <p class="text-xs text-gray-400 leading-relaxed font-light mb-6 max-w-sm">
+                        Redefining modern rest through artisanal woodworking, organic mattress technology, and bespoke sleep customization.
+                    </p>
+                    <div class="flex items-center space-x-4 text-gold">
+                        <a href="#" class="w-9 h-9 rounded-full border border-gold/30 flex items-center justify-center hover:bg-gold hover:text-obsidian-950 transition-colors"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="w-9 h-9 rounded-full border border-gold/30 flex items-center justify-center hover:bg-gold hover:text-obsidian-950 transition-colors"><i class="fa-brands fa-pinterest-p"></i></a>
+                        <a href="#" class="w-9 h-9 rounded-full border border-gold/30 flex items-center justify-center hover:bg-gold hover:text-obsidian-950 transition-colors"><i class="fa-brands fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+
+                <!-- Nav -->
+                <div>
+                    <h4 class="text-xs uppercase tracking-widest text-white font-semibold mb-4">Navigation</h4>
+                    <ul class="space-y-2.5 text-xs font-light">
+                        <li><a href="#home" class="hover:text-gold transition-colors">Home</a></li>
+                        <li><a href="#about" class="hover:text-gold transition-colors">Our Craft</a></li>
+                        <li><a href="#services" class="hover:text-gold transition-colors">Size Guide</a></li>
+                        <li><a href="#customizing" class="hover:text-gold transition-colors">Atelier Studio</a></li>
+                        <li><a href="#materials" class="hover:text-gold transition-colors">Material Swatches</a></li>
+                        <li><a href="#contact" class="hover:text-gold transition-colors">VIP Concierge</a></li>
+                    </ul>
+                </div>
+
+                <!-- Flagships -->
+                <div>
+                    <h4 class="text-xs uppercase tracking-widest text-white font-semibold mb-4">Showrooms</h4>
+                    <ul class="space-y-2.5 text-xs font-light">
+                        <li><span class="text-gold">●</span> Park Avenue, New York</li>
+                        <li><span class="text-gold">●</span> Mayfair, London</li>
+                        <li><span class="text-gold">●</span> Rue du Faubourg, Paris</li>
+                        <li><span class="text-gold">●</span> Beverly Hills, CA</li>
+                        <li><span class="text-gold">●</span> Ginza, Tokyo</li>
+                    </ul>
+                </div>
+
+                <!-- Newsletter -->
+                <div>
+                    <h4 class="text-xs uppercase tracking-widest text-white font-semibold mb-4">Private Journal</h4>
+                    <p class="text-xs font-light mb-4">Receive VIP invitations to limited material releases and ergonomic studies.</p>
+                    <form onsubmit="handleNewsletter(event)" class="space-y-2">
+                        <input type="email" required placeholder="Enter private email" class="w-full bg-obsidian-900 border border-white/10 rounded-sm px-3 py-2 text-xs text-white focus:outline-none focus:border-gold">
+                        <button type="submit" class="w-full py-2 bg-gold/20 border border-gold/40 text-gold text-xs font-semibold uppercase tracking-wider rounded-sm hover:bg-gold hover:text-obsidian-950 transition-all">
+                            Subscribe
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Bottom Bar -->
+            <div class="pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between text-[11px] font-light">
+                <p>&copy; 2026 AURA Sleep Sanctuary Inc. All Rights Reserved.</p>
+                <div class="flex space-x-6 mt-4 sm:mt-0">
+                    <a href="#" class="hover:text-gold">Privacy Policy</a>
+                    <a href="#" class="hover:text-gold">Terms of Craftsmanship</a>
+                    <a href="#" class="hover:text-gold">Warranty Charter</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div id="toast" class="fixed bottom-6 right-6 z-50 glass-panel border border-gold px-6 py-4 rounded-sm shadow-2xl hidden items-center gap-3">
+        <i class="fa-solid fa-circle-check text-gold text-lg"></i>
+        <span id="toast-msg" class="text-xs text-white font-medium">Specification applied successfully!</span>
+    </div>
+
+    <script>
+        // Customizer Application State State Management
+        const customizerState = {
+            step: 1,
+            size: { name: 'Single / Twin XL', price: 1200 },
+            mattress: { name: 'Organic Talalay Latex & Cashmere', price: 1400 },
+            wood: { name: 'American Black Walnut', price: 1600 },
+            fabric: { name: 'Royal Velvet Charcoal', price: 800 },
+            headboard: { name: 'Vertical Channeling & Brushed Brass', price: 1100 }
+        };
+
+        // Header Background Scroll Handler
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('main-header');
+            if (window.scrollY > 50) {
+                header.classList.add('bg-obsidian-950/90', 'backdrop-blur-md', 'shadow-2xl', 'py-3');
+                header.classList.remove('py-5');
+            } else {
+                header.classList.remove('bg-obsidian-950/90', 'backdrop-blur-md', 'shadow-2xl', 'py-3');
+                header.classList.add('py-5');
+            }
+        });
+
+        // Mobile Navigation Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            mobileMenu.classList.toggle('flex');
+        });
+
+        document.querySelectorAll('.mobile-nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                mobileMenu.classList.remove('flex');
+            });
+        });
+
+        // Step Navigation Logic
+        function switchStep(stepNum) {
+            customizerState.step = stepNum;
+
+            // Update Tab UI
+            document.querySelectorAll('.tab-btn').forEach((btn, index) => {
+                if (index + 1 === stepNum) {
+                    btn.classList.add('active');
+                } else {
+                    btn.classList.remove('active');
+                }
+            });
+
+            // Show Panel
+            document.querySelectorAll('.step-panel').forEach((panel, index) => {
+                if (index + 1 === stepNum) {
+                    panel.classList.remove('hidden');
+                } else {
+                    panel.classList.add('hidden');
+                }
+            });
+
+            // Update Previous/Next Buttons
+            const prevBtn = document.getElementById('prev-btn');
+            const nextBtn = document.getElementById('next-btn');
+
+            if (stepNum === 1) {
+                prevBtn.classList.add('invisible');
+            } else {
+                prevBtn.classList.remove('invisible');
+            }
+
+            if (stepNum === 5) {
+                nextBtn.innerHTML = 'Review Summary <i class="fa-solid fa-check ml-2"></i>';
+            } else {
+                nextBtn.innerHTML = 'Next Step <i class="fa-solid fa-arrow-right ml-2"></i>';
+            }
+        }
+
+        function nextStep() {
+            if (customizerState.step < 5) {
+                switchStep(customizerState.step + 1);
+            } else {
+                applySpecToForm();
+            }
+        }
+
+        function prevStep() {
+            if (customizerState.step > 1) {
+                switchStep(customizerState.step - 1);
+            }
+        }
+
+        // Option Selection Handler
+        function selectOption(category, name, price) {
+            customizerState[category] = { name, price };
+
+            // UI selection toggle
+            const optionCards = document.querySelectorAll(`.${category}-opt`);
+            optionCards.forEach(card => {
+                card.classList.remove('selected');
+            });
+            event.currentTarget.classList.add('selected');
+
+            updateSummary();
+        }
+
+        // Quick Select Size from Services Cards
+        function quickSelectSize(sizeName) {
+            let foundPrice = 2400;
+            if (sizeName.includes('Single')) foundPrice = 1200;
+            if (sizeName.includes('Full')) foundPrice = 1800;
+            if (sizeName.includes('Queen')) foundPrice = 2400;
+            if (sizeName.includes('King')) foundPrice = 3100;
+
+            customizerState.size = { name: sizeName, price: foundPrice };
+            
+            // Re-highlight UI
+            document.querySelectorAll('.size-opt').forEach(card => {
+                if (card.innerText.includes(sizeName)) {
+                    card.classList.add('selected');
+                } else {
+                    card.classList.remove('selected');
+                }
+            });
+
+            updateSummary();
+            document.getElementById('customizing').scrollIntoView({ behavior: 'smooth' });
+            showToast(`Selected ${sizeName} in Customizer Studio.`);
+        }
+
+        // Update Live Calculation and UI Summary Text
+        function updateSummary() {
+            document.getElementById('summary-size').innerText = customizerState.size.name;
+            document.getElementById('summary-mattress').innerText = customizerState.mattress.name;
+            document.getElementById('summary-wood').innerText = customizerState.wood.name;
+            document.getElementById('summary-fabric').innerText = customizerState.fabric.name;
+            document.getElementById('summary-headboard').innerText = customizerState.headboard.name;
+
+            const total = customizerState.size.price + 
+                          customizerState.mattress.price + 
+                          customizerState.wood.price + 
+                          customizerState.fabric.price + 
+                          customizerState.headboard.price;
+
+            document.getElementById('total-price').innerText = `$${total.toLocaleString()}`;
+
+            // Sync with Contact Form
+            const summaryString = `Size: ${customizerState.size.name} | Mattress: ${customizerState.mattress.name} | Wood: ${customizerState.wood.name} | Upholstery: ${customizerState.fabric.name} | Headboard: ${customizerState.headboard.name} (Estimated Total: $${total.toLocaleString()})`;
+            document.getElementById('form-specs-summary').value = summaryString;
+        }
+
+        // Transfer Customizer Spec into Contact Form
+        function applySpecToForm() {
+            updateSummary();
+            document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+            showToast('Your custom design specification has been pre-filled into the VIP consultation form.');
+        }
+
+        // Mock Download Spec
+        function downloadDesignSpec() {
+            const specText = `AURA SLEEP SANCTUARY - BESPOKE SPECIFICATION
+------------------------------------------------------
+Size: ${customizerState.size.name}
+Mattress Core: ${customizerState.mattress.name}
+Wood Frame: ${customizerState.wood.name}
+Upholstery Fabric: ${customizerState.fabric.name}
+Headboard Style: ${customizerState.headboard.name}
+------------------------------------------------------
+Estimated Investment: ${document.getElementById('total-price').innerText}
+Lead Time: 14-21 Business Days`;
+
+            const blob = new Blob([specText], { type: 'text/plain' });
+            const element = document.createElement('a');
+            element.href = URL.createObjectURL(blob);
+            element.download = 'AURA_Sleep_Sanctuary_Spec.txt';
+            document.body.appendChild(element);
+            element.click();
+            document.body.removeChild(element);
+
+            showToast('Specification summary sheet downloaded!');
+        }
+
+        // Form Handlers
+        function handleFormSubmit(e) {
+            e.preventDefault();
+            showToast('VIP Consultation request submitted successfully! Our concierge will contact you shortly.');
+            e.target.reset();
+            updateSummary();
+        }
+
+        function handleNewsletter(e) {
+            e.preventDefault();
+            showToast('Thank you for subscribing to the AURA Private Journal.');
+            e.target.reset();
+        }
+
+        // Custom Toast Notification System
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            const toastMsg = document.getElementById('toast-msg');
+            toastMsg.innerText = message;
+            toast.classList.remove('hidden');
+            toast.classList.add('flex');
+            setTimeout(() => {
+                toast.classList.add('hidden');
+                toast.classList.remove('flex');
+            }, 4500);
+        }
+
+        // Initial Load Initialization
+        window.onload = function() {
+            updateSummary();
+        }
+    </script>
+</body>
+</html>
